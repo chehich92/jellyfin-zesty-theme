@@ -1,0 +1,141 @@
+/*
+ * GLASS-STYLE MOVIE DETAIL PAGE
+ * Ported from JellyfinGlassTheme by MadhavKrishanGoswami
+ * Only affects item/movie detail pages, not home/dashboard
+ */
+
+/* ── Wrapper: full-height with bottom gradient ── */
+.layout-desktop .detailPageWrapperContainer {
+    background: linear-gradient(180deg, transparent 0%, transparent 40%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.95) 100%) !important;
+    min-height: 100vh !important;
+}
+
+/* ── Primary container: flex column, push to bottom ── */
+.layout-desktop .detailPagePrimaryContainer {
+    background: transparent !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+    min-height: 50vh !important;
+    padding-left: 3.3% !important;
+    padding-right: 3.3% !important;
+    width: 100% !important;
+    left: 0 !important;
+}
+
+/* ── Detail ribbon: full height, column layout ── */
+.layout-desktop .detailRibbon {
+    background: transparent !important;
+    height: auto !important;
+    min-height: 25vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    text-align: left !important;
+    padding-left: 0 !important;
+}
+
+/* ── Title: big, bold, with text shadow ── */
+.layout-desktop .detailRibbon .pageTitle {
+    font-size: 2.5em !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.9) !important;
+    margin-bottom: 0.2em !important;
+    height: auto !important;
+}
+
+/* ── Metadata row: left-aligned, with text shadow ── */
+.layout-desktop .itemMiscInfo-primary {
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.9) !important;
+}
+
+/* ── Metadata group (genre/studio): dark glass box ── */
+.layout-desktop .itemDetailsGroup {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 12px !important;
+    padding: 0.5em 1em !important;
+}
+
+/* ── Main buttons (Play, Mark Played, etc.) ── */
+.layout-desktop .mainDetailButtons {
+    justify-content: flex-start !important;
+    margin: 1em 0 0 0 !important;
+    padding: 0 !important;
+}
+
+.layout-desktop .mainDetailButtons .detailButton {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 10px !important;
+    margin-right: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.layout-desktop .mainDetailButtons .detailButton:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Play button: solid white */
+.layout-desktop .mainDetailButtons .btnPlay.detailButton {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #000 !important;
+}
+
+.layout-desktop .mainDetailButtons .btnPlay.detailButton:hover {
+    background: rgba(255, 255, 255, 1) !important;
+}
+
+/* ── Hide poster on desktop ── */
+.layout-desktop .detailImageContainer .card:not(.backdropCard) {
+    display: none !important;
+}
+
+/* ── Secondary container (cast, crew, similar): dark transparent ── */
+.layout-desktop .detailPageSecondaryContainer {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    padding: 2em 3.3% !important;
+    margin: 0 !important;
+}
+
+/* ── Section titles (Cast, Crew, Similar) ── */
+.layout-desktop .detailPageSecondaryContainer .sectionTitle {
+    font-size: 1.3em !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5em !important;
+    padding-left: 0 !important;
+}
+
+/* ── Remove overview text ── */
+.layout-desktop .overview,
+.layout-desktop .listItem-overview {
+    display: none !important;
+}
+
+/* ── Backdrop: full viewport, no overlays ── */
+.layout-desktop .itemBackdrop {
+    height: 100vh !important;
+    width: 100vw !important;
+}
+
+.layout-desktop .backdropImage {
+    filter: none !important;
+}
+
+/* ── Transparent header on detail pages ── */
+#itemDetailPage .skinHeader:not(.semiTransparent) {
+    background: transparent !important;
+}
+
+/* ── Remove Jellyfin's default gradient on backgroundContainer ── */
+.layout-desktop .backgroundContainer {
+    background-image: none !important;
+}
