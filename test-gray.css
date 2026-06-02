@@ -1,0 +1,10 @@
+/* Gray color scheme test */
+:root {
+  --accent: 255, 255, 255;
+  --accent-off: 141, 141, 141;
+  --dark: 32, 32, 32;
+  --darkest: 25, 25, 25;
+  --dark-highlight: 65, 65, 65;
+  --dark-apparent: 43, 43, 43;
+}
+body { border: 5px solid lime !important; }
