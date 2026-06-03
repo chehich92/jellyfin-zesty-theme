@@ -1,11 +1,12 @@
+@import url('https://chehich92.github.io/jellyfin-zesty-theme/theme.css');
+
 /* ═══════════════════════════════════════════════════
-   MOVIE DETAIL PAGE — Glass-style layout
-   Paste BELOW your existing custom CSS in Jellyfin
+   MOVIE DETAIL PAGE — Backdrop on top, content scrolls below
    ═══════════════════════════════════════════════════ */
 
-/* ── 1. Backdrop: full viewport, no effects ── */
+/* 1. Backdrop: fixed at top, full viewport */
 .layout-desktop .itemBackdrop {
-    height: 80vh !important;
+    height: 100vh !important;
     width: 100vw !important;
     position: fixed !important;
     top: 0 !important;
@@ -17,16 +18,10 @@
     filter: none !important;
 }
 
-/* ── 2. Wrapper: full viewport height for backdrop area ── */
-.layout-desktop .detailPageWrapperContainer {
-    position: relative;
-    background: transparent !important;
-    margin-top: unset !important;
-}
-
+/* 2. Gradient overlay on backdrop (left + bottom fade) */
 .layout-desktop .detailPageWrapperContainer::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -38,22 +33,27 @@
     pointer-events: none;
 }
 
-/* ── 3. Primary container: bottom-left over backdrop ── */
-.layout-desktop .detailPagePrimaryContainer {
-    position: absolute !important;
-    bottom: 60px !important;
-    left: 48px !important;
-    right: auto !important;
-    top: auto !important;
-    width: auto !important;
-    max-width: 55% !important;
+/* 3. Wrapper: transparent, no margin hack */
+.layout-desktop .detailPageWrapperContainer {
     background: transparent !important;
-    z-index: 2 !important;
-    display: block !important;
-    padding: 0 !important;
+    margin-top: unset !important;
 }
 
-/* ── 4. Detail ribbon: transparent, column layout ── */
+/* 4. Primary container: sits at top of scrollable area, over the backdrop */
+.layout-desktop .detailPagePrimaryContainer {
+    position: relative !important;
+    z-index: 2 !important;
+    background: transparent !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 0 3.3% 60px 48px !important;
+    width: 100% !important;
+    left: 0 !important;
+}
+
+/* 5. Detail ribbon: column layout */
 .layout-desktop .detailRibbon {
     background: transparent !important;
     display: flex !important;
@@ -61,9 +61,10 @@
     gap: 12px !important;
     margin: 0 !important;
     padding: 0 !important;
+    max-width: 55% !important;
 }
 
-/* ── 5. Title: large, bold, white, text shadow ── */
+/* 6. Title: large, bold, white */
 .layout-desktop .detailRibbon .pageTitle {
     font-size: 3em !important;
     font-weight: 700 !important;
@@ -74,7 +75,7 @@
     line-height: 1.1 !important;
 }
 
-/* ── 6. Metadata row: readable against backdrop ── */
+/* 7. Metadata: readable */
 .layout-desktop .itemMiscInfo-primary {
     margin: 0 !important;
     justify-content: flex-start !important;
@@ -82,7 +83,7 @@
     color: rgba(255,255,255,0.85) !important;
 }
 
-/* ── 7. Overview/description: readable, clamped ── */
+/* 8. Overview: readable, clamped */
 .layout-desktop .detailPagePrimaryContent .overview,
 .layout-desktop .detailPagePrimaryContent .listItem-overview {
     color: rgba(255,255,255,0.85) !important;
@@ -97,7 +98,7 @@
     margin-top: 4px !important;
 }
 
-/* ── 8. Buttons: ghost/outline style ── */
+/* 9. Buttons: ghost/outline style */
 .layout-desktop .mainDetailButtons {
     margin: 8px 0 0 0 !important;
     padding: 0 !important;
@@ -120,7 +121,6 @@
     border-color: rgba(255,255,255,0.9) !important;
 }
 
-/* Play button: solid white */
 .layout-desktop .mainDetailButtons .btnPlay.detailButton {
     background: rgba(255,255,255,0.9) !important;
     color: #000 !important;
@@ -132,12 +132,12 @@
     background: rgba(255,255,255,1) !important;
 }
 
-/* ── 9. Hide poster on desktop ── */
+/* 10. Hide poster on desktop */
 .layout-desktop .detailImageContainer .card:not(.backdropCard) {
     display: none !important;
 }
 
-/* ── 10. Secondary container (cast/crew): below the backdrop ── */
+/* 11. Secondary container (cast/crew): black background, scrolls naturally */
 .layout-desktop .detailPageSecondaryContainer {
     background: #000 !important;
     padding: 2em 3.3% !important;
@@ -153,12 +153,12 @@
     margin-bottom: 0.5em !important;
 }
 
-/* ── 11. Transparent header on detail pages ── */
+/* 12. Transparent header on detail pages */
 #itemDetailPage .skinHeader:not(.semiTransparent) {
     background: transparent !important;
 }
 
-/* ── 12. Background container: no gradient image ── */
+/* 13. Background container: no gradient image */
 .layout-desktop .backgroundContainer {
     background-image: none !important;
 }
