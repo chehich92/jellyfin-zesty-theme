@@ -137,15 +137,26 @@
     display: none !important;
 }
 
-/* 11. Secondary container (cast/crew): frosted glass with gradient transition */
+/* 11. Secondary container (cast/crew): frosted glass with smooth blur transition */
 .layout-desktop .detailPageSecondaryContainer {
-    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.7) 100%) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
+    background: transparent !important;
     padding: 2em 3.3% !important;
     margin: 0 !important;
     position: relative;
     z-index: 2;
+}
+
+.layout-desktop .detailPageSecondaryContainer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 40%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 40%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .layout-desktop .detailPageSecondaryContainer .sectionTitle {
