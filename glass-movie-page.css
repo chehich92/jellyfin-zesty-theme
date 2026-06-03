@@ -137,9 +137,11 @@
     display: none !important;
 }
 
-/* 11. Secondary container (cast/crew): black background, scrolls naturally */
+/* 11. Secondary container (cast/crew): frosted glass */
 .layout-desktop .detailPageSecondaryContainer {
-    background: #000 !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
     padding: 2em 3.3% !important;
     margin: 0 !important;
     position: relative;
