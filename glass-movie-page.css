@@ -53,7 +53,7 @@
     left: 0 !important;
 }
 
-/* 5. Detail ribbon: column layout */
+/* 5. Detail ribbon: column layout, no max-width so absolute children work */
 .layout-desktop .detailRibbon {
     background: transparent !important;
     display: flex !important;
@@ -61,10 +61,9 @@
     gap: 8px !important;
     margin: 0 !important;
     padding: 0 !important;
-    max-width: 55% !important;
 }
 
-/* 5b. InfoWrapper: compact, no extra margins */
+/* 5b. InfoWrapper: remove extra space */
 .layout-desktop .detailRibbon .infoWrapper {
     margin: 0 !important;
     padding: 0 !important;
@@ -86,6 +85,22 @@
     margin-bottom: 0.5em !important;
     z-index: 3 !important;
     object-fit: contain !important;
+}
+
+/* 5d. itemMiscInfo: move to right side of page, same vertical line as buttons */
+.layout-desktop .itemMiscInfo-primary {
+    position: absolute !important;
+    right: 3.3% !important;
+    bottom: 60px !important;
+    left: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: right !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 4px !important;
+    z-index: 3 !important;
 }
 
 /* 6. Title: large, bold, white */
