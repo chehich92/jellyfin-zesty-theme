@@ -1,7 +1,7 @@
 @import url('https://chehich92.github.io/jellyfin-zesty-theme/theme.css');
 
 /* ═══════════════════════════════════════════════════
-   MOVIE DETAIL PAGE — Backdrop on top, content scrolls below
+   MOVIE DETAIL PAGE — Glass-style layout
    ═══════════════════════════════════════════════════ */
 
 /* 1. Backdrop: fixed at top, full viewport */
@@ -18,7 +18,7 @@
     filter: none !important;
 }
 
-/* 2. Gradient overlay on backdrop (left + bottom fade) */
+/* 2. Gradient overlay on backdrop */
 .layout-desktop .detailPageWrapperContainer::before {
     content: '';
     position: fixed;
@@ -33,13 +33,13 @@
     pointer-events: none;
 }
 
-/* 3. Wrapper: transparent, no margin hack */
+/* 3. Wrapper: transparent */
 .layout-desktop .detailPageWrapperContainer {
     background: transparent !important;
     margin-top: unset !important;
 }
 
-/* 4. Primary container: sits at top of scrollable area, over the backdrop */
+/* 4. Primary container: bottom of viewport */
 .layout-desktop .detailPagePrimaryContainer {
     position: relative !important;
     z-index: 2 !important;
@@ -53,57 +53,31 @@
     left: 0 !important;
 }
 
-/* 5. Detail ribbon: column layout, no max-width so absolute children work */
+/* 5. Detail ribbon: remove max-width, let children flow */
 .layout-desktop .detailRibbon {
     background: transparent !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    max-width: 100% !important;
 }
 
-/* 5b. InfoWrapper: remove extra space */
-.layout-desktop .detailRibbon .infoWrapper {
+/* 6. InfoWrapper: remove extra space */
+.layout-desktop .infoWrapper {
     margin: 0 !important;
-    padding: 0 !important;
 }
 
-/* 5c. Logo: show above info and buttons */
+/* 7. Logo: show on left side, above buttons */
 .layout-desktop .detailLogo {
-    display: block !important;
-    position: relative !important;
-    left: 0 !important;
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    width: auto !important;
-    max-width: 50% !important;
-    height: auto !important;
-    max-height: 15vh !important;
-    background-position: left bottom !important;
-    margin-bottom: 0.5em !important;
-    z-index: 3 !important;
-    object-fit: contain !important;
-}
-
-/* 5d. itemMiscInfo: move to right side of page, same vertical line as buttons */
-.layout-desktop .itemMiscInfo-primary {
     position: absolute !important;
-    right: 3.3% !important;
-    bottom: 60px !important;
-    left: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    text-align: right !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-end !important;
-    gap: 4px !important;
+    left: 48px !important;
+    bottom: calc(60px + 5em) !important;
+    width: auto !important;
+    max-width: 40% !important;
+    height: auto !important;
+    max-height: 20vh !important;
+    display: block !important;
     z-index: 3 !important;
 }
 
-/* 6. Title: large, bold, white */
+/* 8. Title: large, bold */
 .layout-desktop .detailRibbon .pageTitle {
     font-size: 3em !important;
     font-weight: 700 !important;
@@ -114,15 +88,31 @@
     line-height: 1.1 !important;
 }
 
-/* 7. Metadata: readable */
+/* 9. itemMiscInfo: RIGHT side, same vertical position as buttons */
 .layout-desktop .itemMiscInfo-primary {
+    position: absolute !important;
+    right: 3.3% !important;
+    bottom: 60px !important;
+    left: auto !important;
     margin: 0 !important;
-    justify-content: flex-start !important;
+    padding: 0.5em 1em !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 12px !important;
     text-shadow: 0 1px 6px rgba(0,0,0,0.9) !important;
-    color: rgba(255,255,255,0.85) !important;
+    color: rgba(255,255,255,0.9) !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+    z-index: 3 !important;
+    width: auto !important;
+    max-width: 40% !important;
 }
 
-/* 8. Overview: readable, clamped */
+/* 10. Overview: readable, clamped */
 .layout-desktop .detailPagePrimaryContent .overview,
 .layout-desktop .detailPagePrimaryContent .listItem-overview {
     color: rgba(255,255,255,0.85) !important;
@@ -137,7 +127,7 @@
     margin-top: 4px !important;
 }
 
-/* 9. Buttons: ghost/outline style */
+/* 11. Buttons: ghost/outline style, bottom-left */
 .layout-desktop .mainDetailButtons {
     margin: 8px 0 0 0 !important;
     padding: 0 !important;
@@ -171,12 +161,12 @@
     background: rgba(255,255,255,1) !important;
 }
 
-/* 10. Hide poster on desktop */
+/* 12. Hide poster on desktop */
 .layout-desktop .detailImageContainer .card:not(.backdropCard) {
     display: none !important;
 }
 
-/* 11. Secondary container (cast/crew): frosted glass with gradient transition */
+/* 13. Secondary container (cast/crew): frosted glass */
 .layout-desktop .detailPageSecondaryContainer {
     background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.7) 100%) !important;
     backdrop-filter: blur(20px) !important;
@@ -194,12 +184,12 @@
     margin-bottom: 0.5em !important;
 }
 
-/* 12. Transparent header on detail pages */
+/* 14. Transparent header on detail pages */
 #itemDetailPage .skinHeader:not(.semiTransparent) {
     background: transparent !important;
 }
 
-/* 13. Background container: no gradient image */
+/* 15. Background container: no gradient image */
 .layout-desktop .backgroundContainer {
     background-image: none !important;
 }
