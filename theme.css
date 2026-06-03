@@ -96,26 +96,22 @@ h4 {
     top: 0;
     left: 0;
     width: 100vw;
+    z-index: 0;
 }
 .layout-tv .backgroundContainer,
 .layout-desktop .backgroundContainer {
-    background-size: cover !important; /* fix for gradient on 2K and 4K displays */
+    background-size: cover !important;
     position: fixed;
     opacity: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 /* controls gradient overlay properties - url to img in colorschemes */
-.layout-tv .backgroundContainer .layout-desktop .backgroundContainer {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-size: cover;
-    opacity: 1;
-}
 .layout-desktop .detailPageWrapperContainer {
     margin-top: unset;
-    background: linear-gradient(180deg, transparent 0%, transparent 40%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.95) 100%) !important;
     min-height: 100vh;
 }
 
@@ -132,14 +128,9 @@ h4 {
     display: none;
 }
 
-.layout-desktop .detailPagePrimaryContainer,
-.layout-desktop .detailPageContent {
-    padding-left: 3.3%;
-}
-
-.layout-desktop .detailPagePrimaryContent {
-    width: 100%;
-    display: inherit;
+.layout-desktop .detailPageWrapperContainer {
+    margin-top: unset;
+    min-height: 100vh;
 }
 
 .layout-desktop .detailPagePrimaryContainer {
@@ -147,11 +138,20 @@ h4 {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    z-index: 2;
-    left: 0;
+    padding-left: 3.3%;
+    padding-right: 3.3%;
+    padding-top: 50vh;
+    padding-bottom: 2em;
     background: transparent;
-    min-height: 50vh;
     width: 100%;
+    left: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.layout-desktop .detailPagePrimaryContent {
+    width: 100%;
+    display: inherit;
 }
 
 .layout-desktop .detailPageSecondaryContainer {
