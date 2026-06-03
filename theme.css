@@ -73,9 +73,9 @@ h4 {
 .layout-desktop .detailLogo {
     position: relative !important;
     left: 0 !important;
-    bottom: auto !important;
     top: auto !important;
     right: auto !important;
+    bottom: auto !important;
     width: auto !important;
     max-width: 40% !important;
     height: auto !important;
@@ -83,15 +83,14 @@ h4 {
     background-position: left bottom !important;
     margin-bottom: 1em !important;
     display: block !important;
-    z-index: 3 !important;
 }
 
 .detailLogo {
     position: relative !important;
     left: 0 !important;
-    bottom: auto !important;
     top: auto !important;
     right: auto !important;
+    bottom: auto !important;
     width: auto !important;
     max-width: 40% !important;
     height: auto !important;
@@ -99,7 +98,6 @@ h4 {
     background-position: left bottom !important;
     margin-bottom: 1em !important;
     display: block !important;
-    z-index: 3 !important;
 }
 
 .layout-desktop .itemBackdrop {
