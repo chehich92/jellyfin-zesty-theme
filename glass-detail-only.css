@@ -1,0 +1,1054 @@
+/* ═══════════════════════════════════════════════════
+   GLASS THEME — MOVIE DETAIL PAGE CSS
+   Extracted from JellyfinGlassTheme by MadhavKrishanGoswami
+   Paste this into Jellyfin Dashboard → General → Custom CSS
+   ═══════════════════════════════════════════════════ */
+
+.cardImageIcon {
+    color: var(--borderColor);
+}
+
+.cardPadder .cardImageIcon {
+    color: var(--selectorBackgroundColorAlpha);
+}
+
+.card:focus .cardBox:not(.visualCardBox) .cardScalable {
+    border-color: white !important;
+}
+
+[dir="ltr"] .itemsContainer>.card>.cardBox {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cardBox-bottompadded {
+    margin-bottom: 0.5em !important;
+}
+
+    .cardBox-bottompadded {
+        margin-bottom: 0.25em !important;
+    }
+
+.cardScalable {
+    border-radius: var(--largeRadius);
+    border: var(--darkerBorderColor) solid var(--borderWidthDouble) !important;
+    overflow: hidden !important;
+    box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.4);
+    transition: transform 125ms;
+}
+
+    #guestCastContent .cardScalable {
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+    }
+
+#guestCastContent .cardContent.cardImageContainer {
+    background-position-y: 33%;
+}
+
+.layout-mobile .cardScalable {
+    border: var(--defaultBorder) !important;
+}
+
+.visualCardBox .cardScalable {
+    border-width: 0 0 var(--borderWidth) 0 !important;
+    border-radius: 0 !important;
+    border-color: var(--darkerBorderColor) !important;
+}
+
+.cardImageContainer {
+    transition: transform 0.375s;
+}
+
+.card.squareCard[data-type="TvChannel"] .cardImageContainer.cardContent {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cardImageContainer>.cardDefaultText {
+    font-size: 2em;
+    padding-top: 1.5em;
+    color: transparent;
+    white-space: pre;
+}
+
+.cardImageContainer>.cardDefaultText::before {
+    content: "?\A";
+    color: var(--borderColor);
+}
+
+.card-hoverable:hover .visualCardBox .cardScalable {
+    border-color: var(--darkerBorderColor) !important;
+}
+
+.card-hoverable:hover .cardImageContainer {
+    transform: scale(1.025);
+}
+
+.card-hoverable .cardScalable:active {
+    transition: transform 0.075s;
+    transform: scale(1);
+}
+
+.cardScalable:has(.cardOverlayButton-hover:hover)>.cardImageContainer {
+    transform: scale(1);
+}
+
+.cardBox:not(.visualCardBox) .cardPadder {
+    background-color: var(--lighterGradientPoint);
+}
+
+.layout-mobile .cardOverlayButton-br:not([data-action="menu"])>.cardOverlayButtonIcon {
+    background-color: var(--btnMiniPlayColor) !important;
+    color: white;
+    border: var(--defaultLighterBorder);
+    border-color: var(--btnMiniPlayBorderColor);
+    font-size: 75%;
+    box-shadow: var(--shadow);
+    z-index: 2;
+}
+
+[dir="ltr"].layout-desktop .cardOverlayButton-br {
+    bottom: 0.75em;
+    right: 0.5em;
+    display: var(--extraCardButtonsVisibility);
+    z-index: 1;
+}
+
+.layout-desktop .cardOverlayButton-br button {
+    color: white;
+    text-shadow: var(--shadow);
+}
+
+.layout-mobile .cardOverlayButton {
+    padding: 1em;
+    font-size: 60%;
+}
+
+[dir="ltr"] .layout-mobile .cardOverlayButton-br {
+    bottom: 0.25em;
+    right: 0.25em;
+    display: var(--miniOverlayButtonVisibility);
+}
+
+.layout-mobile .backdropCard .cardOverlayButton-br:not([data-action="menu"]) {
+    display: none;
+}
+
+.layout-mobile .cardOverlayButton-br[data-action="menu"]>.cardOverlayButtonIcon {
+    background-color: transparent !important;
+    color: white;
+    border: none;
+    text-shadow: 1px 1px 0.1em black;
+    color: white;
+}
+
+    .layout-desktop .listItem-largeImage>.listItem-bottomoverview {
+        order: 2;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 12;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 11;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 10;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 10;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 9;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 9;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 9;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 7;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 6;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 6;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 5;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 4;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 3;
+    }
+
+    .squareCard:has(.cardFooter) {
+        --cardCount: 2;
+    }
+
+.detailPageWrapperContainer {
+    padding-top: unset;
+    margin-top: unset;
+}
+
+.layout-desktop .detailPageWrapperContainer {
+    background: transparent;
+    min-height: 46vh;
+    background: linear-gradient(180deg, transparent, 17vh, var(--darkerGradientPointAlpha) 50vh);
+}
+
+.layout-tv .detailPageWrapperContainer {
+    padding-left: 30vw;
+    background: transparent;
+    min-height: 46vh;
+    background: linear-gradient(0deg, var(--darkerGradientPointAlpha) 70%, 85%, transparent);
+}
+
+.detailPagePrimaryContainer {
+    align-content: space-between;
+    align-items: stretch;
+    justify-content: end;
+    flex-direction: column;
+    /* center content on desktop */
+    align-items: center;
+    /* this aligns the plot to left on 10.11.0 */
+    text-align: left;
+    /* temporarily disabled for 10.11.0 */
+    /* margin-bottom: -1.5em; */
+}
+
+.layout-mobile .detailPagePrimaryContainer>.detailRibbon {
+    padding: 0 var(--sidePadding);
+}
+
+.layout-desktop .detailPagePrimaryContainer {
+    background: transparent;
+}
+
+.layout-desktop .detailPageSecondaryContainer {
+    background-color: transparent;
+}
+
+[dir=ltr] .detailPagePrimaryContainer.detailRibbon {
+    padding-left: var(--sidePadding);
+}
+
+.layout-mobile .detailPagePrimaryContent {
+    padding-left: var(--sidePadding) !important;
+    padding-right: var(--sidePadding) !important;
+}
+
+.layout-tv [dir="ltr"] .detailRibbon {
+    flex-direction: column;
+}
+
+.detailPagePrimaryContainer>.detailPagePrimaryContent {
+    padding-top: 0;
+}
+
+.detailPageSecondaryContainer {
+    /* use !important for pre-10.11.0 compatibility */
+    padding-top: 0 !important;
+}
+
+.skinHeader-withBackground:not(.semiTransparent) .headerHomeButton {
+    display: none;
+}
+
+.layout-mobile:has(#itemDetailPage:not(.hide)) .headerHomeButton {
+    display: block;
+}
+
+.pageTitle {
+    height: 1.5em;
+}
+
+.headerLeft .pageTitle {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.verticalSection.emby-scroller-container>h2.sectionTitle.sectionTitle-cards {
+    padding-top: 1.25em !important;
+    margin: 0 0 -0.5em 0;
+}
+
+#itemDetailPage .scrollX {
+    margin: 0 calc(-1 * var(--sidePadding));
+    padding-left: calc(var(--sidePadding) - 0.375em);
+    /* mask-image: linear-gradient(90deg, transparent, white var(--sidePadding), white calc(100vw - var(--sidePadding)), transparent); */
+}
+
+.layout-desktop .scrollX {
+    --itemColumnGap: 0.5em;
+}
+
+.scrollX {
+    padding-left: calc(var(--sidePadding) - 0.375em);
+}
+
+.sectionTabs .scrollX {
+    padding-left: 0;
+}
+
+.itemsContainer:not(.editorsChoiceItemsContainer) {
+    column-gap: var(--itemColumnGap);
+}
+
+.layout-tv .sectionTitle {
+    font-size: 1.5rem !important;
+}
+
+.sectionTitleContainer+.emby-scrollbuttons {
+    padding-top: 0;
+}
+
+.detailRibbon {
+    background-color: transparent;
+}
+
+.itemMiscInfo-primary {
+    column-gap: 0.5em;
+}
+
+.detailRibbon:has(.portraitCard .folder) {
+    min-height: 32vh;
+    align-content: flex-end;
+}
+
+.layout-desktop .detailRibbon {
+    height: 100%;
+    min-height: 25vh;
+    margin-top: unset;
+}
+
+.itemBackdrop {
+    display: block !important;
+}
+
+.layout-desktop .itemBackdrop {
+    height: calc(100vh - 27vh - var(--primaryItemPageNegativeSpace));
+}
+
+.layout-mobile .itemBackdrop {
+    margin-top: 0;
+    position: sticky;
+    top: -30%;
+    -webkit-mask: var(--itemBackdropMask);
+    mask: var(--itemBackdropMask);
+    animation: animMoveDown 0.5s ease-out forwards;
+    height: 45vh;
+}
+
+.layout-tv .itemBackdrop {
+    height: 33vh;
+}
+
+#itemDetailPage:has(.detailImageContainer .live_tv) .itemBackdrop {
+    height: calc(100vh - 27vh - var(--secondaryItemPageNegativeSpace));
+}
+
+#itemDetailPage:has(.detailImageContainer .cardPadder-square:not(.person)) .itemBackdrop {
+    height: calc(100vh - 20vh - var(--secondaryItemPageNegativeSpace));
+}
+
+.detailLogo {
+    display: var(--clearLogoVisibility);
+    top: calc(100vh - var(--clearLogoBottomSpace) - var(--primaryItemPageNegativeSpace));
+    left: 0;
+    width: 40%;
+    transform: translateY(-100%);
+    margin: auto 30%;
+    height: 25vh;
+    background-position: bottom;
+}
+
+.layout-mobile .detailLogo {
+    display: var(--clearLogoVisibility);
+    z-index: 1;
+    position: absolute;
+    left: 1em;
+    top: 45vh;
+    margin: auto 0%;
+    width: calc(100vw - 2em);
+    max-height: 17vh;
+    animation: animMoveUp 1s ease-out forwards;
+}
+
+.layout-tv .detailLogo {
+    display: var(--clearLogoVisibility);
+    height: 20vh;
+    top: 39vh;
+    left: 30vw;
+    width: 60vw;
+    margin: auto 5vw;
+}
+
+#itemDetailPage:has(.subtitle) .detailLogo {
+    top: calc(100vh - 6em - var(--secondaryItemPageNegativeSpace));
+}
+
+.layout-mobile #itemDetailPage:has(.subtitle) .detailLogo {
+    top: calc(100vh - 11em - var(--secondaryItemPageNegativeSpace));
+}
+
+.layout-desktop .detailImageContainer .card {
+    position: relative !important;
+    width: 22vh !important;
+    float: none;
+    left: 0 !important;
+    top: 0;
+    right: 0;
+    margin: auto;
+    margin-bottom: 0;
+    place-self: center;
+}
+
+.detailImageContainer .card.backdropCard {
+    width: 40vh !important;
+    max-width: 50vw;
+}
+
+.detailImageContainer .card {
+    display: none;
+}
+
+.layout-tv .detailImageContainer .card {
+    width: 25vw !important;
+    display: block !important;
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: var(--sidePadding);
+    align-content: center;
+    transform: none;
+}
+
+.layout-mobile .detailImageContainer .card {
+    -webkit-filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.25));
+}
+
+.layout-mobile .detailImageContainer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-left: 0 !important;
+}
+
+.layout-mobile .detailImageContainer:has(.card:not(.portraitCard)) {
+    height: 0;
+}
+
+.layout-mobile .detailImageContainer .card {
+    position: inherit !important;
+    margin-top: -150%;
+    max-width: 60vw;
+}
+
+.layout-mobile .detailPageWrapperContainer {
+    padding-top: 0;
+    margin-top: 0.5em;
+}
+
+#itemDetailPage:has(.detailImageContainer .person) .detailLogo {
+    z-index: 2;
+    display: none;
+}
+
+.detailLogo:not(.hide)~.detailPageWrapperContainer .nameContainer h1 {
+    z-index: 2;
+    display: var(--itemTitleVisibility);
+}
+
+.detailLogo.hide~.detailPageWrapperContainer .nameContainer h1 {
+    display: block !important;
+}
+
+.detailImageContainer:has(.cardImageIcon.person)~.nameContainer h1 {
+    display: block !important;
+}
+
+.detailImageContainer .card.backdropCard:has(.cardImageIcon.album) {
+    max-width: 20vh;
+}
+
+.detailImageContainer .card.backdropCard:has(.cardImageIcon.album) .cardScalable {
+    aspect-ratio: 1 / 1;
+}
+
+.detailImageContainer>.card:has(.live_tv) {
+    display: block;
+}
+
+.detailImageContainer .squareCard:has(.person) {
+    display: none;
+}
+
+#itemDetailPage:has(.musicParentName) {
+    background: linear-gradient(180deg, var(--darkerGradientPointAlpha) 80%, transparent);
+}
+
+.layout-mobile #itemDetailPage:has(.musicParentName) .itemBackdrop {
+    animation: animMoveDownSecondaryPage 0.5s ease-out forwards;
+}
+
+.layout-mobile .cardImageIcon {
+    font-size: 3.5em;
+}
+
+    .layout-mobile .btnPlay.detailButton:not(.play-button) {
+        flex: 0 0 100%;
+        margin-right: 0 !important;
+    }
+
+.backgroundContainer.withBackdrop {
+    opacity: 0.9;
+    background: linear-gradient(0deg, var(--darkerGradientPoint), 45%, rgba(17, 24, 39, 0.25));
+}
+
+.layout-tv .backgroundContainer.withBackdrop {
+    background: linear-gradient(0deg, var(--darkerGradientPoint), 45%, rgba(17, 24, 39, 0.95));
+}
+
+.layout-mobile .withSectionTabs .backgroundContainer.withBackdrop {
+    opacity: 0.9;
+}
+
+.layout-mobile .backgroundContainer.withBackdrop {
+    opacity: 1;
+    background: var(--darkerGradientPoint);
+}
+
+.withSectionTabs .backgroundContainer.withBackdrop {
+    background: var(--darkerGradientPoint);
+}
+
+.nowPlayingInfoContainer .btnPlayPause {
+    font-size: 3em;
+}
+
+.detail-clamp-text {
+    text-align: start;
+    color: var(--dimTextColor);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.detail-clamp-text p {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+.layout-desktop .detail-clamp-text {
+    -webkit-line-clamp: 2;
+}
+
+.layout-mobile .detail-clamp-text {
+    -webkit-line-clamp: 4;
+}
+
+.layout-tv .detail-clamp-text {
+    -webkit-line-clamp: 10;
+    transition: none;
+}
+
+.overview-expand.emby-button {
+    padding: 0;
+    margin-top: 1.4em;
+    margin-bottom: 1.4em;
+    color: transparent;
+}
+
+.overview-expand.emby-button:after {
+    content: "\e313";
+    font-family: "Material Icons";
+    background: var(--selectorBackgroundColor);
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    align-content: center;
+    line-height: 1.6ch;
+    transition: transform 0.5s;
+    color: var(--textColor);
+}
+
+.overview.detail-clamp-text~.overview-controls .overview-expand:after {
+    transform: rotateZ(0deg);
+}
+
+.overview:not(.detail-clamp-text)~.overview-controls .overview-expand:after {
+    transform: rotateZ(180deg);
+}
+
+.overview-controls {
+    height: 0;
+}
+
+.detailSectionContent:has(.itemExternalLinks.hide) .overview-controls {
+    height: 1em;
+}
+
+.itemMiscInfo {
+    align-items: flex-end !important;
+    justify-content: center;
+}
+
+.cardText-first+.itemSelectionPanel>.checkboxContainer {
+    height: calc(100% - 1.75em);
+}
+
+.overflowBackdropCard .cardText-first+.itemSelectionPanel>.checkboxContainer {
+    height: calc(100% - 0em);
+}
+
+.cardPadder {
+    text-align: center;
+}
+
+#guestCastContent .cardPadder .cardImageIcon {
+    display: none;
+}
+
+.cardText.cardTextCentered:not(.cardText-secondary, .cardText-first)+.itemSelectionPanel>.checkboxContainer {
+    height: calc(100% - 3em);
+}
+
+.cardScalable+.itemSelectionPanel>.checkboxContainer {
+    height: calc(100% - 0em);
+}
+
+.cardScalable {
+    background: var(--cardBackgroundGradient);
+}
+
+.detailButton {
+    border: var(--defaultLighterBorder);
+    padding: 0.5em 0.5em !important;
+}
+
+.detailButton-icon {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.cardScalable .material-icons.check:before {
+    font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 20;
+    transform: scale(1.25);
+}
+
+.detailButton:not(.btnPlay) {
+    color: var(--textColor);
+    backdrop-filter: none;
+    border-color: transparent;
+    margin: 0.5em !important;
+    border-radius: 50%;
+    padding: 0.6em !important;
+    background: transparent;
+}
+
+.layout-desktop .detailButton:not(.btnPlay):hover {
+    color: black;
+    background: var(--dimTextColor);
+}
+
+.detailButton:active {
+    color: black;
+    background: var(--textColor);
+}
+
+.btnPlay.detailButton {
+    background-color: var(--textColor);
+    color: black;
+    border-radius: 3em;
+    border-color: var(--borderColor);
+    height: 3em;
+    min-width: 10em;
+    margin-right: 0.5em !important;
+    flex-direction: row;
+}
+
+.btnPlay:not(.formDialogFooterItem):not(.play-button):after {
+    content: attr(title);
+    padding: 0 1ch;
+}
+
+.btnPlay>.detailButton-content::after {
+    padding: 0 1ch;
+    place-content: center;
+}
+
+.btnPlay>.detailButton-content {
+    -webkit-align-items: unset;
+    align-items: unset;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: unset;
+    flex-direction: unset;
+    -webkit-justify-content: unset;
+    align-content: unset;
+    justify-content: flex-start;
+}
+
+.mainDetailButtons:has(.detailButton[data-type="Book"]) .btnPlay[title="Play"]:after {
+    content: "Read";
+}
+
+.mainDetailButtons:has(.detailButton[data-type="Book"]) .btnPlay .material-icons.play_arrow:before {
+    content: "\f1c6";
+    padding-inline-end: 1ch;
+}
+
+.mainDetailButtons {
+    justify-content: center;
+    margin: 0;
+}
+
+.layout-mobile [dir="ltr"] .mainDetailButtons {
+    flex-wrap: wrap;
+    padding: 0 1.25em;
+}
+
+    .mainDetailButtons {
+        font-size: unset;
+        margin: 0;
+    }
+
+.listItem-overview {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+[dir="ltr"] .listItem:not(.actionSheetMenuItem)[data-type="Episode"] .listItem-overview p {
+    margin-top: 0.75em;
+    margin-bottom: 0em;
+}
+
+#itemDetailPage .detailSection {
+    display: grid;
+    row-gap: 1em;
+    column-gap: 3em;
+    max-width: unset !important;
+    grid-template-columns: 25% 1fr 1fr 1fr;
+    margin-bottom: 1.5em;
+}
+
+.layout-mobile .detailSection {
+    grid-template-columns: 1fr;
+}
+
+.detailPageContent {
+    gap: 1em;
+}
+
+.detailSectionContent a:not(.overview-expand) {
+    text-align: start;
+}
+
+.layout-desktop .detailSectionContent {
+    display: grid;
+    align-content: end;
+    min-height: 16vh;
+}
+
+.detailSectionContent:has(.tagline.hide + .overview.hide) {
+    min-height: unset;
+}
+
+.itemDetailsGroup {
+    outline: none;
+    overflow: hidden;
+    margin-top: 1em;
+    border-radius: var(--smallRadius);
+    background-color: var(--lighterGradientPointAlpha);
+    border: none;
+    box-shadow: inset 0 0 0 0.06em var(--borderColor) !important;
+    order: 2;
+    grid-column: 1 / 3;
+}
+
+.layout-mobile .itemDetailsGroup {
+    margin-top: 0;
+}
+
+.layout-tv .itemDetailsGroup {
+    order: 2;
+}
+
+.detailSection>.nextUpSection {
+    order: 5;
+    grid-column: 1;
+}
+
+.detailSection>#listChildrenCollapsible {
+    order: 6;
+    grid-column: 2 / -1;
+}
+
+.detailSectionContent {
+    order: 1;
+    grid-column: 1 / -1;
+}
+
+.trackSelections.hide~.recordingFields.hide~.itemDetailsGroup {
+    grid-column: 1 / -1;
+}
+
+.collectionItems .sectionTitleContainer.padded-left {
+    padding-left: 0.375em;
+}
+
+[dir="ltr"] .detailPageContent>.detailPagePrimaryContent {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#itemDetailPage .verticalSection .itemsContainer.padded-right {
+    padding-right: 0 !important;
+}
+
+.sectionTitleTextButton {
+    padding: 0 0.5em;
+}
+
+.sectionTitleTextButton:hover {
+    background: transparent !important;
+}
+
+.sectionTitleTextButton:active {
+    color: white !important;
+}
+
+.sectionTitleContainer-cards {
+    padding-top: 0;
+    margin: 0.75em 0 -0.75em 0;
+}
+
+.sectionTitleTextButton>* {
+    text-align: left;
+    /* !important are needed for proper alignment on phones */
+    padding: 0.3em 0 !important;
+    margin: 0 0 !important;
+    /* this prevents long library names from breaking into another line */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 88vw;
+}
+
+.layout-mobile :not(.sectionTitleContainer-cards)>.sectionTitle-cards {
+    margin: 0.75em 0 -0.75em 0;
+}
+
+.dashboardSection .sectionTitleTextButton>.material-icons.material-icons {
+    font-size: unset;
+}
+
+.sectionTitleTextButton>.material-icons::before {
+    display: none;
+}
+
+.sectionTitleTextButton>.material-icons.chevron_right {
+    margin-left: 0.5rem !important;
+    height: 1.5rem;
+    width: 1.5rem;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23D1D5DB' aria-hidden='true'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center center;
+    background-size: contain;
+    /* Stops miscalculating the size on hover effect */
+}
+
+    .btnPlay.detailButton:hover {
+        background-color: var(--textColor);
+        color: black;
+    }
+
+    #scenesContent .cardScalable:hover {
+        border-color: var(--dimTextColor) !important;
+    }
+
+    .sectionTitleTextButton:hover {
+        background: transparent !important;
+        color: white !important;
+    }
+
+.nameContainer>h1.parentName {
+    font-size: 4em;
+    white-space: pre-wrap;
+    padding-bottom: 0.5ch;
+    color: white;
+}
+
+.nameContainer>h1.parentName a {
+    font-weight: 200;
+}
+
+.nameContainer>h1.parentName a {
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.layout-mobile .nameContainer>h1.parentNameLast {
+    font-size: 2em;
+    word-wrap: break-word;
+    padding-bottom: 0ch;
+}
+
+.itemName.originalTitle {
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    color: var(--dimTextColor);
+    display: var(--itemOriginalTitleVisibility);
+}
+
+#scenesContent .cardScalable:active {
+    border-color: var(--dimTextColor) !important;
+}
+
+.skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred.semiTransparent.noHeaderRight {
+    display: none;
+}
+
+#homeTab .overflowBackdropCard[data-isfolder="true"]:not(.groupedCard) .cardText.cardTextCentered {
+    display: var(--libraryLabelVisibility);
+} */
+
+.overflowBackdropCard[data-type="UserView"] .cardPadder-overflowBackdrop {
+    padding-bottom: 50%;
+}
+
+.overflowBackdropCard[data-type="UserView"] .cardText-first {
+    display: var(--libraryLabelVisibility);
+}
+
+.nowPlayingPageImageContainerNoAlbum .cardImageContainer .cardImageIcon {
+    color: var(--borderColor);
+}
+
+    .nowPlayingPageImageContainerNoAlbum .cardImageContainer .cardImageIcon {
+        font-size: 8em !important;
+    }
+
+.skinHeader-withBackground.osdHeader {
+    background: var(--topOSDGradient);
+}
+
+.skinHeader-withBackground.semiTransparent {
+    --headerBackground: none;
+    backdrop-filter: none;
+    background-color: transparent;
+    border: none;
+}
+
+.skinHeader.headroom:not(.osdHeader, .noHomeButtonHeader):has(.pageTitle:empty) {
+    --headerBackground: none;
+    backdrop-filter: none;
+    background-color: transparent;
+    border: none;
+}
+
+.skinHeader.headroom:not(.osdHeader, .noHomeButtonHeader):has(.pageTitle:empty) .headerButton {
+    text-shadow: 1px 1px 0 #00000080;
+}
+
+.card.show-animation .cardBox {
+    transition: transform 0.05s ease-out, -webkit-transform 0.05s ease-out;
+}
+
+.skinHeader-withBackground {
+    background: transparent !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+.card:focus-within .cardScalable {
+    transform: scale(1.05) !important;
+    z-index: 9999 !important;
+    border-radius: 14px !important;
+    border: none !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9) !important;
+    filter: brightness(1.1);
+}
+
+.card:focus-within .cardText {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+}
+
+.btnPlay.detailButton {
+    background-color: #e0e0e0 !important;
+    color: #000000 !important;
+    border: none !important;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.btnPlay.detailButton:hover {
+    background-color: #ffffff !important;
+    transform: scale(1.05);
+}
+
+.detailButton:not(.btnPlay) {
+    color: #e0e0e0 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.detailButton:not(.btnPlay):hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+.detailRibbon {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.itemDetailsGroup {
+    background: rgba(0, 0, 0, 0.6) !important;
+    /* Dark glass */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    /* Subtle grey border */
+    backdrop-filter: blur(10px);
+}
+
+.itemDetailsGroup a {
+    color: #dcdcdc !important;
+}
+
+.detailPageWrapperContainer {
+    background: linear-gradient(0deg, #000000 85%, transparent) !important;
+    padding-top: 20vh !important;
+}
+
+.itemBackdrop::after {
+    background: linear-gradient(to bottom, transparent 0%, #000000 100%) !important;
+}
