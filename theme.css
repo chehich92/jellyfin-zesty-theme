@@ -71,8 +71,11 @@ h4 {
 /*  ###### Desktop Layout ##### */
 
 .layout-desktop .detailLogo {
-    left: 5%;
-    background-position: left;
+    left: 0;
+    background-position: bottom;
+    width: 40%;
+    margin: auto 30%;
+    height: 25vh;
 }
 
 .detailLogo {
@@ -89,7 +92,10 @@ h4 {
     background-image: none !important;
     background-size: cover;
     height: 100vh;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
 }
 .layout-tv .backgroundContainer,
 .layout-desktop .backgroundContainer {
@@ -108,8 +114,9 @@ h4 {
     opacity: 1;
 }
 .layout-desktop .detailPageWrapperContainer {
-    margin-top: -89vh;
-    /* inicial: 73 */
+    margin-top: unset;
+    background: linear-gradient(180deg, transparent 0%, transparent 40%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.95) 100%) !important;
+    min-height: 100vh;
 }
 
 .layout-desktop .detailImageContainer .card,
@@ -127,28 +134,40 @@ h4 {
 
 .layout-desktop .detailPagePrimaryContainer,
 .layout-desktop .detailPageContent {
-    padding-left: 5%;
+    padding-left: 3.3%;
 }
 
 .layout-desktop .detailPagePrimaryContent {
-    width: 45%;
-	display: inherit;
-  }
+    width: 100%;
+    display: inherit;
+}
 
 .layout-desktop .detailPagePrimaryContainer {
-    display: inline-table;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
     z-index: 2;
-    left: 5%;
+    left: 0;
+    background: transparent;
+    min-height: 50vh;
+    width: 100%;
 }
 
 .layout-desktop .detailPageSecondaryContainer {
-    margin: 0 0 0em 0 !important;
-    padding-bottom: 0em !important;
+    margin: 0 !important;
+    padding: 2em 3.3% !important;
+    background: rgba(0, 0, 0, 0.8) !important;
 }
 
 .layout-desktop .itemDetailsGroup {
     margin-top: 0;
-    padding-bottom: 0vh !important;
+    padding: 0.5em 1em !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 12px !important;
 }
 
 .layout-desktop a.overview-expand.emby-button {
@@ -333,7 +352,31 @@ button.emby-tab-button:nth-child(3) {
 }
 
 .layout-desktop .detailPagePrimaryContainer .mainDetailButtons {
-    margin: 0em 0;
+    margin: 1em 0 0 0;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.layout-desktop .detailPagePrimaryContainer .mainDetailButtons .detailButton {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 10px !important;
+    margin-right: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.layout-desktop .detailPagePrimaryContainer .mainDetailButtons .detailButton:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+}
+
+.layout-desktop .detailPagePrimaryContainer .mainDetailButtons .btnPlay.detailButton {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #000 !important;
+}
+
+.layout-desktop .detailPagePrimaryContainer .mainDetailButtons .btnPlay.detailButton:hover {
+    background: rgba(255, 255, 255, 1) !important;
 }
 
 .layout-desktop div:not(.sectionTitleContainer-cards) > .sectionTitle-cards {
@@ -1644,10 +1687,14 @@ div[data-role="controlgroup"] a[data-role="button"]:last-child {
 
   /*Colors for Title ribbon */
   .layout-desktop .detailRibbon {
-    background: rgba(0, 0, 0, 0);
-  	margin-top: -.7em;
-	  display: inherit;
-	  
+    background: transparent;
+    margin-top: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: left;
+    height: auto;
+    min-height: 25vh;
   }
   /* Item backdrop overlay color */
   .itemBackdrop::after {
@@ -2140,6 +2187,38 @@ progress {
 /* margin to Jellyfin logo */
 .pageTitle {
     margin: 0 0 0 0.15em;
+}
+
+/* Detail page: big title with text shadow */
+.layout-desktop .detailRibbon .pageTitle {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+    margin-bottom: 0.2em;
+    height: auto;
+}
+
+/* Detail page: metadata with text shadow */
+.layout-desktop .itemMiscInfo-primary {
+    margin-left: 0;
+    justify-content: flex-start;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+}
+
+/* Detail page: hide overview */
+.layout-desktop .overview,
+.layout-desktop .listItem-overview {
+    display: none !important;
+}
+
+/* Detail page: transparent backgroundContainer */
+.layout-desktop .backgroundContainer {
+    background-image: none !important;
+}
+
+/* Detail page: transparent header */
+#itemDetailPage .skinHeader:not(.semiTransparent) {
+    background: transparent !important;
 }
 
 /* #### Media Player #### */
