@@ -71,19 +71,35 @@ h4 {
 /*  ###### Desktop Layout ##### */
 
 .layout-desktop .detailLogo {
-    left: 0;
-    background-position: bottom;
-    width: 40%;
-    margin: auto 30%;
-    height: 25vh;
+    position: relative !important;
+    left: 0 !important;
+    bottom: auto !important;
+    top: auto !important;
+    right: auto !important;
+    width: auto !important;
+    max-width: 40% !important;
+    height: auto !important;
+    max-height: 20vh !important;
+    background-position: left bottom !important;
+    margin-bottom: 1em !important;
+    display: block !important;
+    z-index: 3 !important;
 }
 
 .detailLogo {
-    height: 16vh;
-    position: absolute;
-    right: 25vw;
-    top: 10vh;
-    width: 34em;
+    position: relative !important;
+    left: 0 !important;
+    bottom: auto !important;
+    top: auto !important;
+    right: auto !important;
+    width: auto !important;
+    max-width: 40% !important;
+    height: auto !important;
+    max-height: 20vh !important;
+    background-position: left bottom !important;
+    margin-bottom: 1em !important;
+    display: block !important;
+    z-index: 3 !important;
 }
 
 .layout-desktop .itemBackdrop {
@@ -92,27 +108,27 @@ h4 {
     background-image: none !important;
     background-size: cover;
     height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 0;
+    position: relative;
 }
 .layout-tv .backgroundContainer,
 .layout-desktop .backgroundContainer {
-    background-size: cover !important;
+    background-size: cover !important; /* fix for gradient on 2K and 4K displays */
     position: fixed;
     opacity: 100%;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
 }
 /* controls gradient overlay properties - url to img in colorschemes */
+.layout-tv .backgroundContainer .layout-desktop .backgroundContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    opacity: 1;
+}
 .layout-desktop .detailPageWrapperContainer {
-    margin-top: unset;
-    min-height: 100vh;
+    margin-top: -89vh;
+    /* inicial: 73 */
 }
 
 .layout-desktop .detailImageContainer .card,
@@ -128,46 +144,30 @@ h4 {
     display: none;
 }
 
-.layout-desktop .detailPageWrapperContainer {
-    margin-top: unset;
-    min-height: 100vh;
-}
-
-.layout-desktop .detailPagePrimaryContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding-left: 3.3%;
-    padding-right: 3.3%;
-    padding-top: 50vh;
-    padding-bottom: 2em;
-    background: transparent;
-    width: 100%;
-    left: 0;
-    position: relative;
-    z-index: 2;
+.layout-desktop .detailPagePrimaryContainer,
+.layout-desktop .detailPageContent {
+    padding-left: 5%;
 }
 
 .layout-desktop .detailPagePrimaryContent {
-    width: 100%;
-    display: inherit;
+    width: 45%;
+	display: inherit;
+  }
+
+.layout-desktop .detailPagePrimaryContainer {
+    display: inline-table;
+    z-index: 2;
+    left: 5%;
 }
 
 .layout-desktop .detailPageSecondaryContainer {
-    margin: 0 !important;
-    padding: 2em 3.3% !important;
-    background: rgba(0, 0, 0, 0.8) !important;
+    margin: 0 0 0em 0 !important;
+    padding-bottom: 0em !important;
 }
 
 .layout-desktop .itemDetailsGroup {
     margin-top: 0;
-    padding: 0.5em 1em !important;
-    background: rgba(0, 0, 0, 0.5) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    border-radius: 12px !important;
+    padding-bottom: 0vh !important;
 }
 
 .layout-desktop a.overview-expand.emby-button {
@@ -352,31 +352,7 @@ button.emby-tab-button:nth-child(3) {
 }
 
 .layout-desktop .detailPagePrimaryContainer .mainDetailButtons {
-    margin: 1em 0 0 0;
-    justify-content: flex-start;
-    padding: 0;
-}
-
-.layout-desktop .detailPagePrimaryContainer .mainDetailButtons .detailButton {
-    background: rgba(255, 255, 255, 0.12) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    border-radius: 10px !important;
-    margin-right: 8px !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-.layout-desktop .detailPagePrimaryContainer .mainDetailButtons .detailButton:hover {
-    background: rgba(255, 255, 255, 0.25) !important;
-}
-
-.layout-desktop .detailPagePrimaryContainer .mainDetailButtons .btnPlay.detailButton {
-    background: rgba(255, 255, 255, 0.9) !important;
-    color: #000 !important;
-}
-
-.layout-desktop .detailPagePrimaryContainer .mainDetailButtons .btnPlay.detailButton:hover {
-    background: rgba(255, 255, 255, 1) !important;
+    margin: 0em 0;
 }
 
 .layout-desktop div:not(.sectionTitleContainer-cards) > .sectionTitle-cards {
@@ -1687,14 +1663,10 @@ div[data-role="controlgroup"] a[data-role="button"]:last-child {
 
   /*Colors for Title ribbon */
   .layout-desktop .detailRibbon {
-    background: transparent;
-    margin-top: unset;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: left;
-    height: auto;
-    min-height: 25vh;
+    background: rgba(0, 0, 0, 0);
+  	margin-top: -.7em;
+	  display: inherit;
+	  
   }
   /* Item backdrop overlay color */
   .itemBackdrop::after {
@@ -2187,38 +2159,6 @@ progress {
 /* margin to Jellyfin logo */
 .pageTitle {
     margin: 0 0 0 0.15em;
-}
-
-/* Detail page: big title with text shadow */
-.layout-desktop .detailRibbon .pageTitle {
-    font-size: 2.5em;
-    font-weight: 700;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.9);
-    margin-bottom: 0.2em;
-    height: auto;
-}
-
-/* Detail page: metadata with text shadow */
-.layout-desktop .itemMiscInfo-primary {
-    margin-left: 0;
-    justify-content: flex-start;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.9);
-}
-
-/* Detail page: hide overview */
-.layout-desktop .overview,
-.layout-desktop .listItem-overview {
-    display: none !important;
-}
-
-/* Detail page: transparent backgroundContainer */
-.layout-desktop .backgroundContainer {
-    background-image: none !important;
-}
-
-/* Detail page: transparent header */
-#itemDetailPage .skinHeader:not(.semiTransparent) {
-    background: transparent !important;
 }
 
 /* #### Media Player #### */
